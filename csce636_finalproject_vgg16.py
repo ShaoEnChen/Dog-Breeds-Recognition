@@ -7,9 +7,6 @@ Original file is located at
 		https://colab.research.google.com/drive/1LvmrJgtme68W5562VMRrGTRxfcDuLlFr
 """
 
-from google.colab import drive
-drive.mount('/content/gdrive')
-
 import os
 import shutil
 import numpy as np
@@ -21,6 +18,8 @@ import random
 data_dir = './stanford-dogs-dataset'
 
 # # Connected to Google Drive
+# from google.colab import drive
+# drive.mount('/content/gdrive')
 # data_dir = '/content/gdrive/My Drive/Colab Notebooks/stanford-dogs-dataset'
 
 images_dir = os.path.join(data_dir, 'Images')
@@ -56,42 +55,42 @@ for content in os.listdir(images_dir):
 		continue
 	breed_numberings[labels[0]] = labels[1]
 
-  # Count # of images in each folder to analyze data
-  folder_dir = os.path.join(images_dir, content)
-  file_names = np.asarray(os.listdir(folder_dir))
-  file_names = np.delete(file_names, np.argwhere(file_names == '.DS_Store'))
-  file_num = len(file_names)
-  np.random.shuffle(file_names)
+	# Count # of images in each folder to analyze data
+	folder_dir = os.path.join(images_dir, content)
+	file_names = np.asarray(os.listdir(folder_dir))
+	file_names = np.delete(file_names, np.argwhere(file_names == '.DS_Store'))
+	file_num = len(file_names)
+	np.random.shuffle(file_names)
 
-  # Copy and create train / validation / test datasets
-  file_sep = 0
+	# Copy and create train / validation / test datasets
+	file_sep = 0
 
-  dst_dir = os.path.join(train_dir, labels[1])
-  os.mkdir(dst_dir)
-  train_sample_num = math.floor(file_num * train_val_test_ratio[0] / np.sum(train_val_test_ratio))
-  for i in range(file_sep, file_sep + train_sample_num):
-    src = os.path.join(folder_dir, file_names[i])
-    dst = os.path.join(dst_dir, file_names[i])
-    shutil.copyfile(src, dst)
-  file_sep += train_sample_num
+	dst_dir = os.path.join(train_dir, labels[1])
+	os.mkdir(dst_dir)
+	train_sample_num = math.floor(file_num * train_val_test_ratio[0] / np.sum(train_val_test_ratio))
+	for i in range(file_sep, file_sep + train_sample_num):
+		src = os.path.join(folder_dir, file_names[i])
+		dst = os.path.join(dst_dir, file_names[i])
+		shutil.copyfile(src, dst)
+	file_sep += train_sample_num
 
-  dst_dir = os.path.join(val_dir, labels[1])
-  os.mkdir(dst_dir)
-  val_sample_num = math.floor(file_num * train_val_test_ratio[1] / np.sum(train_val_test_ratio))
-  for i in range(file_sep, file_sep + val_sample_num):
-    src = os.path.join(folder_dir, file_names[i])
-    dst = os.path.join(dst_dir, file_names[i])
-    shutil.copyfile(src, dst)
-  file_sep += val_sample_num
+	dst_dir = os.path.join(val_dir, labels[1])
+	os.mkdir(dst_dir)
+	val_sample_num = math.floor(file_num * train_val_test_ratio[1] / np.sum(train_val_test_ratio))
+	for i in range(file_sep, file_sep + val_sample_num):
+		src = os.path.join(folder_dir, file_names[i])
+		dst = os.path.join(dst_dir, file_names[i])
+		shutil.copyfile(src, dst)
+	file_sep += val_sample_num
 
-  dst_dir = os.path.join(test_dir, labels[1])
-  os.mkdir(dst_dir)
-  test_sample_num = math.floor(file_num * train_val_test_ratio[2] / np.sum(train_val_test_ratio))
-  for i in range(file_sep, file_sep + test_sample_num):
-    src = os.path.join(folder_dir, file_names[i])
-    dst = os.path.join(dst_dir, file_names[i])
-    shutil.copyfile(src, dst)
-  file_sep += test_sample_num
+	dst_dir = os.path.join(test_dir, labels[1])
+	os.mkdir(dst_dir)
+	test_sample_num = math.floor(file_num * train_val_test_ratio[2] / np.sum(train_val_test_ratio))
+	for i in range(file_sep, file_sep + test_sample_num):
+		src = os.path.join(folder_dir, file_names[i])
+		dst = os.path.join(dst_dir, file_names[i])
+		shutil.copyfile(src, dst)
+	file_sep += test_sample_num
 
 train_sample_num = 0
 val_sample_num = 0

@@ -1,5 +1,5 @@
 # Dog-Breeds-Recognition
-From the Stanford Dogs Dataset, we have 120 categories of dogs and more than 20,000 images of different dogs. I’d like to train a neural network that recognizes and segments different breeds of dogs.
+The task of this project is to categorize dog breeds from images with a dataset which contains 120 categories and 20,580 images of dogs.
 
 ## 1. Introduction
 Image Recognition is one of the thriving fields in machine learning and deep learning. Based on image recognition, people can do image caption, object segmentation and other exciting and impressive researches. These techniques can then construct as machine learning foundations and develop into real-world applications that are used globally on all devices and platforms.

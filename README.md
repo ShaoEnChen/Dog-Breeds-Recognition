@@ -18,7 +18,14 @@ Aditya Khosla, Nityananda Jayadevaprakash, Bangpeng Yao and Li Fei-Fei. Novel da
 J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li and L. Fei-Fei, ImageNet: A Large-Scale Hierarchical Image Database. IEEE Computer Vision and Pattern Recognition (CVPR), 2009.
 
 ## 3. Usage
-Running the python code will automatically generate train / validation / test datasets.
+Running this python code will automatically generate train / validation / test datasets.
+The following code trains and tests a CNN model based on VGG 16 with input images from the datasets.
 ```
 python3 csce636_finalproject_vgg16.py
+```
+
+To activate the application with GUI, go to gui/ and execute gui.py:
+```
+cd gui/
+python3 gui.py
 ```

@@ -1,5 +1,7 @@
 # Dog-Breeds-Recognition
 
+### Demo: https://youtu.be/CbxXV22Bjvs
+
 ## 1. Introduction
 Image Recognition is one of the thriving fields in machine learning and deep learning. Based on image recognition, people can do image caption, object segmentation and other exciting and impressive researches. These techniques can then construct as machine learning foundations and develop into real-world applications that are used globally on all devices and platforms.
 
@@ -17,13 +19,16 @@ Aditya Khosla, Nityananda Jayadevaprakash, Bangpeng Yao and Li Fei-Fei. Novel da
 J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li and L. Fei-Fei, ImageNet: A Large-Scale Hierarchical Image Database. IEEE Computer Vision and Pattern Recognition (CVPR), 2009.
 
 ## 3. Usage
-Running this python code will automatically generate train / validation / test datasets.
-The following code trains and tests a CNN model based on VGG 16 with input images from the datasets.
+Before you start, download the model file (https://drive.google.com/open?id=1nHb_lOX0gtEZXRQDLo9KhkD3YeKdZ_7Y) and place it in gui/.
+
+After cloning the project from Github:
 ```
 python3 csce636_finalproject_vgg16.py
 ```
+Running this python code will automatically generate train / validation / test datasets.
+The following code trains and tests a CNN model based on VGG 16 with input images from the datasets.
 
-To activate the application with GUI, go to gui/ and execute gui.py:
+To activate the application with GUI, after downloading the model file from Google Drive, go to gui/ and execute gui.py:
 ```
 cd gui/
 python3 gui.py
